@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: hystrix-app
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: hystrix.stream
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+
+#turbine:
+#  app-config: hystrix-app
+#  aggregator:
+#    cluster-config: HYSTRIX-APP
